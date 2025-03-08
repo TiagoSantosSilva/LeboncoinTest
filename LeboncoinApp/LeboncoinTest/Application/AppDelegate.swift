@@ -5,6 +5,7 @@
 //  Created by Tiago Silva on 08/03/2025.
 //
 
+import LeboncoinUIKit
 import UIKit
 
 @main
@@ -16,7 +17,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         let viewController = UIViewController()
-        viewController.view.backgroundColor = .systemOrange
+        viewController.view.backgroundColor = .App.background
         window?.makeKeyAndVisible()
         window?.rootViewController = viewController
         return true

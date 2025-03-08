@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9A6616362D7CFD08003373C5 /* LeboncoinUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9A6616352D7CFD08003373C5 /* LeboncoinUIKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		9A6615962D7CF76D003373C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		9A66157F2D7CF76C003373C5 /* LeboncoinTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeboncoinTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6615952D7CF76D003373C5 /* LeboncoinTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeboncoinTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A66159F2D7CF76D003373C5 /* LeboncoinTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeboncoinTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A6616332D7CFCFA003373C5 /* LeboncoinUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LeboncoinUIKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -75,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A6616362D7CFD08003373C5 /* LeboncoinUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +104,7 @@
 		9A6615762D7CF76C003373C5 = {
 			isa = PBXGroup;
 			children = (
+				9A6616332D7CFCFA003373C5 /* LeboncoinUIKit */,
 				9A6615C52D7CF943003373C5 /* LeboncoinApp */,
 				9A6615802D7CF76C003373C5 /* Products */,
 			);
@@ -133,6 +140,7 @@
 			);
 			name = LeboncoinTest;
 			packageProductDependencies = (
+				9A6616352D7CFD08003373C5 /* LeboncoinUIKit */,
 			);
 			productName = LeboncoinTest;
 			productReference = 9A66157F2D7CF76C003373C5 /* LeboncoinTest.app */;
@@ -210,6 +218,9 @@
 			);
 			mainGroup = 9A6615762D7CF76C003373C5;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9A6616342D7CFD08003373C5 /* XCLocalSwiftPackageReference "LeboncoinUIKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9A6615802D7CF76C003373C5 /* Products */;
 			projectDirPath = "";
@@ -571,6 +582,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9A6616342D7CFD08003373C5 /* XCLocalSwiftPackageReference "LeboncoinUIKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = LeboncoinUIKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9A6616352D7CFD08003373C5 /* LeboncoinUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LeboncoinUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9A6615772D7CF76C003373C5 /* Project object */;
 }

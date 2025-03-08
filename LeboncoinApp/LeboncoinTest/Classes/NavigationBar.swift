@@ -5,6 +5,7 @@
 //  Created by Tiago Silva on 08/03/2025.
 //
 
+import LeboncoinUIKit
 import UIKit
 
 final class NavigationBar: UINavigationBar {
