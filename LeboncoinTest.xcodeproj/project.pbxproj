@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A4A973C2D7D0D97004287ED /* Ads */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Ads; sourceTree = "<group>"; };
 		9A66157F2D7CF76C003373C5 /* LeboncoinTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeboncoinTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6615952D7CF76D003373C5 /* LeboncoinTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeboncoinTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A66159F2D7CF76D003373C5 /* LeboncoinTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeboncoinTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +115,7 @@
 				9A719B422D7D0A25000A75EC /* Frameworks */,
 				9A6615802D7CF76C003373C5 /* Products */,
 				9AFCC7E12D7D0AEE00422FA7 /* Network */,
+				9A4A973C2D7D0D97004287ED /* Ads */,
 			);
 			sourceTree = "<group>";
 		};
