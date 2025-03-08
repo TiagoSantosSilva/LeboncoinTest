@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9A6616362D7CFD08003373C5 /* LeboncoinUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9A6616352D7CFD08003373C5 /* LeboncoinUIKit */; };
+		9A719B442D7D0A25000A75EC /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 9A719B432D7D0A25000A75EC /* Network */; };
+		9AFCC7E42D7D0B3100422FA7 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 9AFCC7E32D7D0B3100422FA7 /* Network */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,7 @@
 		9A6615952D7CF76D003373C5 /* LeboncoinTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeboncoinTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A66159F2D7CF76D003373C5 /* LeboncoinTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeboncoinTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6616332D7CFCFA003373C5 /* LeboncoinUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LeboncoinUIKit; sourceTree = "<group>"; };
+		9AFCC7E12D7D0AEE00422FA7 /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Network; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -80,7 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AFCC7E42D7D0B3100422FA7 /* Network in Frameworks */,
 				9A6616362D7CFD08003373C5 /* LeboncoinUIKit in Frameworks */,
+				9A719B442D7D0A25000A75EC /* Network in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,9 +109,11 @@
 		9A6615762D7CF76C003373C5 = {
 			isa = PBXGroup;
 			children = (
-				9A6616332D7CFCFA003373C5 /* LeboncoinUIKit */,
 				9A6615C52D7CF943003373C5 /* LeboncoinApp */,
+				9A6616332D7CFCFA003373C5 /* LeboncoinUIKit */,
+				9A719B422D7D0A25000A75EC /* Frameworks */,
 				9A6615802D7CF76C003373C5 /* Products */,
+				9AFCC7E12D7D0AEE00422FA7 /* Network */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +125,13 @@
 				9A66159F2D7CF76D003373C5 /* LeboncoinTestUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9A719B422D7D0A25000A75EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +155,8 @@
 			name = LeboncoinTest;
 			packageProductDependencies = (
 				9A6616352D7CFD08003373C5 /* LeboncoinUIKit */,
+				9A719B432D7D0A25000A75EC /* Network */,
+				9AFCC7E32D7D0B3100422FA7 /* Network */,
 			);
 			productName = LeboncoinTest;
 			productReference = 9A66157F2D7CF76C003373C5 /* LeboncoinTest.app */;
@@ -220,6 +236,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				9A6616342D7CFD08003373C5 /* XCLocalSwiftPackageReference "LeboncoinUIKit" */,
+				9AFCC7E22D7D0B3100422FA7 /* XCLocalSwiftPackageReference "Network" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9A6615802D7CF76C003373C5 /* Products */;
@@ -588,12 +605,24 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = LeboncoinUIKit;
 		};
+		9AFCC7E22D7D0B3100422FA7 /* XCLocalSwiftPackageReference "Network" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Network;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		9A6616352D7CFD08003373C5 /* LeboncoinUIKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LeboncoinUIKit;
+		};
+		9A719B432D7D0A25000A75EC /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
+		};
+		9AFCC7E32D7D0B3100422FA7 /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
