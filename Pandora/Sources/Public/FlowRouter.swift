@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol FlowRouterProtocol {
+public protocol FlowRouterProtocol {
     var navigationController: NavigationController { get }
 
     func dismiss()
@@ -19,28 +19,31 @@ protocol FlowRouterProtocol {
     )
 }
 
-final class FlowRouter: FlowRouterProtocol {
-    enum Transition {
+public final class FlowRouter: @preconcurrency FlowRouterProtocol {
+    public enum Transition {
         case root
         case push
         case modal
     }
 
-    let navigationController: NavigationController
+    public let navigationController: NavigationController
 
     init(navigationController: NavigationController) {
         self.navigationController = navigationController
     }
 
-    func dismiss() {
+    @MainActor
+    public func dismiss() {
         navigationController.dismiss(animated: true, completion: nil)
     }
 
-    func pop(animated: Bool) {
+    @MainActor
+    public func pop(animated: Bool) {
         navigationController.popViewController(animated: animated)
     }
 
-    func transition(
+    @MainActor
+    public func transition(
         to viewController: UIViewController,
         as transitionType: Transition,
         animated: Bool
