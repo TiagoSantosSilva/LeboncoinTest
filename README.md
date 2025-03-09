@@ -6,7 +6,7 @@ This project is a classified ads browser application built with:
 - Xcode 16.2
 - iOS 16+ support
 - Swift 5.9
-- Hybrid architecture: UIKit (project base and ad list) + SwiftUI (ad details view)
+- Hybrid architecture: UIKit (project base and Ad List) + SwiftUI (Ad Details)
 
 The architecture follows an MVVM-C pattern with additional components such as Interactors and ApiServices to enforce the Single Responsibility Pattern, making the codebase easier to refactor and test.
 
