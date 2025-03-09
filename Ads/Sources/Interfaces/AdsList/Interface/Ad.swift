@@ -19,4 +19,5 @@ struct Ad: Hashable {
     let price: String
     let images: Images
     let isUrgent: Bool
+    let creationDate: String
 }

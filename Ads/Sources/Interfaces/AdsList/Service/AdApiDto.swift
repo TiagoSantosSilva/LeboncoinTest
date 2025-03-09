@@ -19,7 +19,7 @@ struct AdApiDto: Decodable, Equatable {
     let description: String
     let price: Double
     let imagesUrl: ImagesURL?
-    let creationDate: String
+    let creationDate: Date
     let isUrgent: Bool
     let siret: String?
 

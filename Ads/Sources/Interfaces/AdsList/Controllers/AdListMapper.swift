@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Pandora
 
 protocol AdListMapperProtocol {
     func map(
@@ -16,6 +17,18 @@ protocol AdListMapperProtocol {
 }
 
 final class AdListMapper: AdListMapperProtocol {
+    private let dateFormatter: DateFormatterProtocol
+
+    init(dateFormatter: DateFormatterProtocol) {
+        self.dateFormatter = dateFormatter
+    }
+
+    convenience init() {
+        self.init(
+            dateFormatter: AdListDateFormatter()
+        )
+    }
+
     func map(
         ads: [AdApiDto],
         categories: [CategoryApiDto],
@@ -24,7 +37,9 @@ final class AdListMapper: AdListMapperProtocol {
         let categoryDictionary = Dictionary(uniqueKeysWithValues: categories.map { ($0.id, $0.name) })
 
         return ads.map { adDto in
-            Ad(
+            let formattedDate = dateFormatter.format(date: adDto.creationDate)
+
+            return Ad(
                 id: adDto.id,
                 category: categoryDictionary[adDto.categoryId] ?? "-",
                 title: adDto.title,
@@ -34,7 +49,8 @@ final class AdListMapper: AdListMapperProtocol {
                     small: URL(string: adDto.imagesUrl?.small ?? ""),
                     thumbnail: URL(string: adDto.imagesUrl?.thumb ?? "")
                 ),
-                isUrgent: adDto.isUrgent
+                isUrgent: adDto.isUrgent,
+                creationDate: formattedDate
             )
         }
     }

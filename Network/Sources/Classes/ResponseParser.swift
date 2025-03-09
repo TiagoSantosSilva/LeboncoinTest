@@ -12,7 +12,15 @@ protocol NetworkResponseParserProtocol: AnyObject {
 }
 
 final class NetworkResponseParser: NetworkResponseParserProtocol {
-    private lazy var decoder = JSONDecoder()
+    private lazy var decoder = {
+        let decoder = JSONDecoder()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        return decoder
+    }()
 
     init() {}
 

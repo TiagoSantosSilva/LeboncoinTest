@@ -141,7 +141,8 @@ private struct AdCollectionViewCellPreview: UIViewRepresentable {
                 small: nil,
                 thumbnail: nil
             ),
-            isUrgent: true
+            isUrgent: true,
+            creationDate: ""
         )
 
         cell.configure(with: mockAd)

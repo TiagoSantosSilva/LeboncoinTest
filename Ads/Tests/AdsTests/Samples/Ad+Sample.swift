@@ -16,7 +16,8 @@ extension Ad {
         description: String = "",
         price: String = "",
         images: Images = .sample(),
-        isUrgent: Bool = false
+        isUrgent: Bool = false,
+        creationDate: String = ""
     ) -> Self {
         .init(
             id: id,
@@ -25,7 +26,8 @@ extension Ad {
             description: description,
             price: price,
             images: images,
-            isUrgent: isUrgent
+            isUrgent: isUrgent,
+            creationDate: creationDate
         )
     }
 }

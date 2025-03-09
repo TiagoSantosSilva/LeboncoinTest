@@ -30,7 +30,8 @@ let package = Package(
             ],
             sources: [
                 "Public",
-                "Classes"
+                "Classes",
+                "Mocks"
             ]
         ),
         .testTarget(

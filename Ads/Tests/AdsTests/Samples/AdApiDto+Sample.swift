@@ -5,6 +5,7 @@
 //  Created by Tiago Silva on 09/03/2025.
 //
 
+import Foundation
 @testable import Ads
 
 extension AdApiDto {
@@ -15,6 +16,7 @@ extension AdApiDto {
         price: Double = 0.0,
         description: String = "",
         imagesUrl: AdApiDto.ImagesURL? = nil,
+        creationDate: Date = .init(),
         isUrgent: Bool = false
     ) -> Self {
         .init(
@@ -24,7 +26,7 @@ extension AdApiDto {
             description: description,
             price: price,
             imagesUrl: imagesUrl,
-            creationDate: "2023-01-01",
+            creationDate: creationDate,
             isUrgent: isUrgent,
             siret: nil
         )
