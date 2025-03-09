@@ -14,7 +14,8 @@ let package = Package(
             name: "Pandora",
             targets: [
                 "Pandora"
-            ]),
+            ]
+        ),
     ],
     dependencies: [
         .package(path: "../LeboncoinUIKit")
