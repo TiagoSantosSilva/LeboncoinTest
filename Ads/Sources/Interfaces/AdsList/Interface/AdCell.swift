@@ -104,14 +104,14 @@ private extension AdCell {
         adImageView.tag = 100
 
         titleLabel.font = .systemFont(ofSize: 16, weight: .medium)
-        titleLabel.textColor = .white
+        titleLabel.textColor = .App.label
         titleLabel.numberOfLines = 2
 
         categoryLabel.font = .systemFont(ofSize: 14, weight: .regular)
-        categoryLabel.textColor = .systemGray
+        categoryLabel.textColor = .App.secondaryLabel
 
         priceLabel.font = .systemFont(ofSize: 16, weight: .medium)
-        priceLabel.textColor = .white
+        priceLabel.textColor = .App.label
         priceLabel.textAlignment = .right
 
         urgentIndicator.text = "Urgent"

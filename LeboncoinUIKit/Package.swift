@@ -21,7 +21,8 @@ let package = Package(
             exclude: [],
             sources: [
                 "Extensions",
-                "Enumerations"
+                "Enumerations",
+                "Views"
             ],
             resources: []
         ),

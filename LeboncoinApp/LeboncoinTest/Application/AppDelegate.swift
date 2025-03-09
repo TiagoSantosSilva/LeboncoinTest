@@ -15,18 +15,17 @@ import UIKit
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
 
+    private lazy var adsLauncher: AdsFlowLauncher = {
+        guard let window = window else { fatalError() }
+        let navigationController = NavigationController()
+        return .init(router: FlowRouter(navigationController: navigationController), window: window)
+    }()
+
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        guard let window = window else { return false }
-
-        let adsLauncher = AdsFlowLauncher()
-        let navigationController = NavigationController()
-        adsLauncher.runAdsList(
-            router: FlowRouter(navigationController: navigationController),
-            window: window
-        )
+        adsLauncher.runAdsList()
         return true
     }
 }

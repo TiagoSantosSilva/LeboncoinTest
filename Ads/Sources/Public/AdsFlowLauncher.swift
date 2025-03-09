@@ -9,20 +9,23 @@ import Pandora
 import UIKit
 
 public protocol AdsFlowLauncherProtocol {
-    func runAdsList(
-        router: FlowRouterProtocol,
-        window: UIWindow
-    )
+    func runAdsList()
 }
 
 public final class AdsFlowLauncher: AdsFlowLauncherProtocol {
-    public init() {}
+    private let coordinator: AdListCoordinator
 
-    public func runAdsList(
+    public init(
         router: FlowRouterProtocol,
         window: UIWindow
     ) {
-        let coordinator = AdListCoordinator(router: router)
-        coordinator.start(window: window)
+        self.coordinator = AdListCoordinator(
+            router: router,
+            window: window
+        )
+    }
+
+    public func runAdsList() {
+        coordinator.start()
     }
 }

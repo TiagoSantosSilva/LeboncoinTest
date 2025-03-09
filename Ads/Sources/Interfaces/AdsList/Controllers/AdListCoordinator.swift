@@ -8,21 +8,36 @@
 import Pandora
 import UIKit
 
-protocol AdListCoordinatorProtocol {
-    func start(window: UIWindow)
-}
-
-final class AdListCoordinator: AdListCoordinatorProtocol {
+final class AdListCoordinator: Coordinator {
     private let router: FlowRouterProtocol
+    private let window: UIWindow
 
-    init(router: FlowRouterProtocol) {
+    init(
+        router: FlowRouterProtocol,
+        window: UIWindow
+    ) {
         self.router = router
+        self.window = window
+        super.init()
     }
 
-    func start(window: UIWindow) {
-        let viewController = AdListViewController(viewModel: AdListViewModel())
+    func start() {
+        let viewModel = AdListViewModel()
+        viewModel.delegate = self
+        let viewController = AdListViewController(viewModel: viewModel)
         router.navigationController.setViewControllers([viewController], animated: false)
         window.rootViewController = router.navigationController
         window.makeKeyAndVisible()
+    }
+}
+
+// MARK: - AdListViewModelDelegate
+
+extension AdListCoordinator: AdListViewModelDelegate {
+    func viewModel(_ viewModel: AdListViewModel, didTap ad: Ad) {
+        initiate(coordinator: AdDetailsCoordinator(
+            ad: ad,
+            router: router)
+        )
     }
 }

@@ -134,6 +134,6 @@ private extension AdListViewController {
 
 extension AdListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
+        viewModel.tap(on: indexPath)
     }
 }

@@ -29,7 +29,11 @@ let package = Package(
                 "Network",
                 "Pandora"
             ],
-            sources: ["Public", "Interfaces"]
+            sources: [
+                "Public",
+                "Interfaces",
+                "Mocks"
+            ]
         ),
         .testTarget(
             name: "AdsTests",

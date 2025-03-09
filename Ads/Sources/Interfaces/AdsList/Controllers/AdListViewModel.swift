@@ -8,6 +8,10 @@
 import Pandora
 import UIKit
 
+protocol AdListViewModelDelegate: AnyObject {
+    func viewModel(_ viewModel: AdListViewModel, didTap ad: Ad)
+}
+
 final class AdListViewModel {
     enum Action {
         case adsLoaded([Ad])
@@ -17,8 +21,10 @@ final class AdListViewModel {
     var didRequestAction: ((Action) -> Void)? = { _ in
         assertionFailure("This should be configured before loading data")
     }
+    weak var delegate: AdListViewModelDelegate?
     private let interactor: AdListInteractorProtocol
     private let currencyInteractor: CurrencyInteractorProtocol
+    private var ads: [Ad] = []
 
     init(
         interactor: AdListInteractorProtocol,
@@ -43,6 +49,10 @@ final class AdListViewModel {
             break
         }
     }
+
+    func tap(on indexPath: IndexPath) {
+        delegate?.viewModel(self, didTap: ads[indexPath.row])
+    }
 }
 
 private extension AdListViewModel {
@@ -51,6 +61,7 @@ private extension AdListViewModel {
             guard let self else { return }
             do {
                 let ads = try await interactor.loadAds(displayCurrency: currencyInteractor.displayCurrency)
+                self.ads = ads
                 didRequestAction?(.adsLoaded(ads))
             } catch {
                 didRequestAction?(.error(error))
