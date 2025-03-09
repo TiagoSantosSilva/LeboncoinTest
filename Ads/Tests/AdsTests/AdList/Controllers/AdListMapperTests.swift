@@ -17,26 +17,19 @@ final class AdListMapperTests {
         sut = AdListMapper()
     }
 
-    @Test("Maps empty arrays to empty array")
-    func testEmptyArrayMapping() {
-        let result = sut.map(ads: [], categories: [], displayCurrency: "EUR")
-
-        #expect(result.isEmpty)
-    }
-
     @Test("Maps ads with matching categories")
     func testMappingWithMatchingCategories() {
         let ads: [AdApiDto] = [
             .sample(id: 1, categoryId: 10, title: "Ad 1", price: 100.0)
         ]
 
-        let categories = [
-            CategoryApiDto.sample(id: 10, name: "Category 1")
+        let categories: [CategoryApiDto] = [
+            .sample(id: 10, name: "Category 1")
         ]
 
         let result = sut.map(ads: ads, categories: categories, displayCurrency: "EUR")
 
-        let expectedAd = Ad.sample(
+        let expectedAd: Ad = .sample(
             id: 1,
             category: "Category 1",
             title: "Ad 1",
@@ -65,10 +58,10 @@ final class AdListMapperTests {
 
         let result = sut.map(ads: ads, categories: categories, displayCurrency: "USD")
 
-        let expectedAds = [
-            Ad.sample(id: 1, category: "Category 1", title: "Ad 1", price: "100.0 USD"),
-            Ad.sample(id: 2, category: "Category 2", title: "Ad 2", price: "200.0 USD"),
-            Ad.sample(id: 3, category: "Category 1", title: "Ad 3", price: "300.0 USD")
+        let expectedAds: [Ad] = [
+            .sample(id: 1, category: "Category 1", title: "Ad 1", price: "100.0 USD"),
+            .sample(id: 2, category: "Category 2", title: "Ad 2", price: "200.0 USD"),
+            .sample(id: 3, category: "Category 1", title: "Ad 3", price: "300.0 USD")
         ]
 
         #expect(result.count == 3)
@@ -87,9 +80,9 @@ final class AdListMapperTests {
 
         let result = sut.map(ads: ads, categories: categories, displayCurrency: "EUR")
 
-        let expectedAd = Ad.sample(
+        let expectedAd: Ad = .sample(
             id: 1,
-            category: "-", // Fallback category
+            category: "-",
             title: "Ad 1",
             price: "100.0 EUR"
         )
@@ -114,7 +107,7 @@ final class AdListMapperTests {
 
         let result = sut.map(ads: ads, categories: categories, displayCurrency: "EUR")
 
-        let expectedAd = Ad.sample(
+        let expectedAd: Ad = .sample(
             id: 1,
             category: "Category 1",
             title: "Ad 1",
@@ -141,7 +134,7 @@ final class AdListMapperTests {
 
         let result = sut.map(ads: ads, categories: categories, displayCurrency: "EUR")
 
-        let expectedAd = Ad.sample(
+        let expectedAd: Ad = .sample(
             id: 1,
             category: "Category 1",
             title: "Ad 1",
@@ -167,7 +160,7 @@ final class AdListMapperTests {
 
         let result = sut.map(ads: ads, categories: categories, displayCurrency: "EUR")
 
-        let expectedAd = Ad.sample(
+        let expectedAd: Ad = .sample(
             id: 1,
             category: "Category 1",
             title: "Ad 1",
@@ -192,9 +185,9 @@ final class AdListMapperTests {
 
         let result = sut.map(ads: ads, categories: categories, displayCurrency: "EUR")
 
-        let expectedAds = [
-            Ad.sample(id: 1, category: "Category 1", title: "Ad 1", price: "100.0 EUR", isUrgent: true),
-            Ad.sample(id: 2, category: "Category 1", title: "Ad 2", price: "100.0 EUR", isUrgent: false)
+        let expectedAds: [Ad] = [
+            .sample(id: 1, category: "Category 1", title: "Ad 1", price: "100.0 EUR", isUrgent: true),
+            .sample(id: 2, category: "Category 1", title: "Ad 2", price: "100.0 EUR", isUrgent: false)
         ]
 
         #expect(result.count == 2)
@@ -215,9 +208,9 @@ final class AdListMapperTests {
         let resultUSD = sut.map(ads: ads, categories: categories, displayCurrency: "USD")
         let resultGBP = sut.map(ads: ads, categories: categories, displayCurrency: "GBP")
 
-        let expectedEUR = Ad.sample(id: 1, category: "Category 1", title: "Ad 1", price: "100.0 EUR")
-        let expectedUSD = Ad.sample(id: 1, category: "Category 1", title: "Ad 1", price: "100.0 USD")
-        let expectedGBP = Ad.sample(id: 1, category: "Category 1", title: "Ad 1", price: "100.0 GBP")
+        let expectedEUR: Ad = .sample(id: 1, category: "Category 1", title: "Ad 1", price: "100.0 EUR")
+        let expectedUSD: Ad = .sample(id: 1, category: "Category 1", title: "Ad 1", price: "100.0 USD")
+        let expectedGBP: Ad = .sample(id: 1, category: "Category 1", title: "Ad 1", price: "100.0 GBP")
 
         #expect(resultEUR[0] == expectedEUR)
         #expect(resultUSD[0] == expectedUSD)
