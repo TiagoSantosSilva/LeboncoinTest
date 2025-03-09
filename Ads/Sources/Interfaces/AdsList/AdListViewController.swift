@@ -14,31 +14,23 @@ final class AdListViewController: UIViewController {
 
     private lazy var collectionView = {
         let itemSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .absolute(96) // Set height to 64pt as requested
-            )
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(96)
+        )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
         let groupSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .absolute(96) // Match item height
-            )
-
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-
-            // Add padding to the group instead of the item
-            group.contentInsets = NSDirectionalEdgeInsets(
-                top: 0,
-                leading: 16, // Left padding
-                bottom: 0,
-                trailing: 16 // Right padding
-            )
-
-            let section = NSCollectionLayoutSection(group: group)
-
-            // Add spacing between items
-            section.interGroupSpacing = 12 // Space between cells
-
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(96)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        group.contentInsets = NSDirectionalEdgeInsets(
+            top: 0,
+            leading: 16,
+            bottom: 0,
+            trailing: 16
+        )
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 12
         let layout = UICollectionViewCompositionalLayout(section: section)
         return UICollectionView(
             frame: .zero,
