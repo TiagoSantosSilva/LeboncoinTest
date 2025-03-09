@@ -8,9 +8,8 @@
 import UIKit
 
 public final class NavigationController: UINavigationController {
-    public override init(rootViewController: UIViewController) {
+    public init() {
         super.init(navigationBarClass: NavigationBar.self, toolbarClass: nil)
-        self.setViewControllers([rootViewController], animated: false)
     }
 
     @available(*, unavailable)

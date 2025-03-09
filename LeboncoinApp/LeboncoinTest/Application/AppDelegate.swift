@@ -8,6 +8,7 @@
 import Ads
 import LeboncoinUIKit
 import Network
+import Pandora
 import UIKit
 
 @main
@@ -18,10 +19,14 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = .App.background
-        window?.makeKeyAndVisible()
-        window?.rootViewController = viewController
+        guard let window = window else { return false }
+
+        let adsLauncher = AdsFlowLauncher()
+        let navigationController = NavigationController()
+        adsLauncher.runAdsList(
+            router: FlowRouter(navigationController: navigationController),
+            window: window
+        )
         return true
     }
 }

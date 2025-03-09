@@ -12,7 +12,7 @@ public protocol NetworkEngineProtocol: AnyObject {
     func request<T: Decodable>(
         url: String,
         method: HTTPMethod,
-        queryParameters: [URLQueryItem]
+        queryParameters: [URLQueryItem]?
     ) async throws -> T
 }
 
@@ -24,7 +24,7 @@ public extension NetworkEngineProtocol {
         try await request(
             url: url,
             method: method,
-            queryParameters: []
+            queryParameters: nil
         )
     }
 }
@@ -67,7 +67,7 @@ public final class NetworkEngine: NetworkEngineProtocol {
     public func request<T: Decodable>(
         url: String,
         method: HTTPMethod,
-        queryParameters: [URLQueryItem]
+        queryParameters: [URLQueryItem]?
     ) async throws -> T {
         let request = try builder.buildRequest(
             for: url,

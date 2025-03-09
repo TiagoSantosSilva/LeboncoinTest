@@ -11,7 +11,7 @@ protocol NetworkRequestBuilderProtocol {
     func buildRequest(
         for endpoint: String,
         method: HTTPMethod,
-        queryItems: [URLQueryItem]
+        queryItems: [URLQueryItem]?
     ) throws -> URLRequest
 }
 
@@ -22,12 +22,12 @@ struct NetworkRequestBuilder: NetworkRequestBuilderProtocol {
     func buildRequest(
         for endpoint: String,
         method: HTTPMethod,
-        queryItems: [URLQueryItem]
+        queryItems: [URLQueryItem]?
     ) throws -> URLRequest {
         var components = URLComponents()
         components.scheme = URLScheme.https.rawValue
         components.host = "raw.githubusercontent.com"
-        components.path = "leboncoin/paperclip/master"
+        components.path = "/leboncoin/paperclip/master".appending(endpoint)
         components.queryItems = queryItems
 
         guard let url = components.url else {

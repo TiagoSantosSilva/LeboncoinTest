@@ -9,8 +9,8 @@ import UIKit
 
 public extension UIColor {
     enum App {
-        public static let background: UIColor = .systemGray6
-        public static let cell: UIColor = .systemGray5
+        public static let background: UIColor = .systemBackground
+        public static let cell: UIColor = .systemGray6
         public static let headerbackground: UIColor = .label
         public static let headerLabel: UIColor = .systemBackground
         public static let tint: UIColor = .systemBlue

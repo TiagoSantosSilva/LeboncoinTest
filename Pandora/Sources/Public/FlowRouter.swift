@@ -28,7 +28,7 @@ public final class FlowRouter: @preconcurrency FlowRouterProtocol {
 
     public let navigationController: NavigationController
 
-    init(navigationController: NavigationController) {
+    public init(navigationController: NavigationController) {
         self.navigationController = navigationController
     }
 
