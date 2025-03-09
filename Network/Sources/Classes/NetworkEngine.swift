@@ -30,15 +30,10 @@ public extension NetworkEngineProtocol {
 }
 
 public final class NetworkEngine: NetworkEngineProtocol {
-
-    // MARK: - Properties
-
     private let builder: NetworkRequestBuilderProtocol
     private let parser: NetworkResponseParserProtocol
     private let urlSession: URLSession
     private var tasks: [String: Task<(), Never>] = [:]
-
-    // MARK: - Initialization
 
     init(
         builder: NetworkRequestBuilderProtocol,
@@ -57,8 +52,6 @@ public final class NetworkEngine: NetworkEngineProtocol {
             urlSession: URLSession.shared
         )
     }
-
-    // MARK: - Functions
 
     public func cancel(url: String) {
         tasks[url]?.cancel()

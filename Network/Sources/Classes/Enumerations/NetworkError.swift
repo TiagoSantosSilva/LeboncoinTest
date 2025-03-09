@@ -11,4 +11,5 @@ enum NetworkError: Error {
     case redirection
     case client
     case server
+    case decodingFailed
 }

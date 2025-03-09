@@ -17,7 +17,10 @@ let package = Package(
     targets: [
         .target(
             name: "Network",
-            sources: ["Classes"]
+            sources: [
+                "Classes",
+                "Mocks"
+            ]
         ),
         .testTarget(
             name: "NetworkTests",

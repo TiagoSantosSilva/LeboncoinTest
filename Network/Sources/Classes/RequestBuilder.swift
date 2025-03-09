@@ -16,9 +16,6 @@ protocol NetworkRequestBuilderProtocol {
 }
 
 struct NetworkRequestBuilder: NetworkRequestBuilderProtocol {
-
-    // MARK: - Functions
-
     func buildRequest(
         for endpoint: String,
         method: HTTPMethod,

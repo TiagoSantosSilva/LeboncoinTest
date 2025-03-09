@@ -1,6 +1,13 @@
+//
+//  NetworkResponseParserTests.swift
+//  Network
+//
+//  Created by Tiago Silva on 08/03/2025.
+//
+
+import Foundation
 import Testing
 @testable import Network
-import Foundation
 
 @Suite("NetworkResponseParser")
 struct NetworkResponseParserTests {

@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct AdApiDto: Decodable {
-    struct ImagesURL: Decodable {
+struct AdApiDto: Decodable, Equatable {
+    struct ImagesURL: Decodable, Equatable {
         let small: String?
         let thumb: String?
     }
