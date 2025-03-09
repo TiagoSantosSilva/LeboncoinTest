@@ -27,12 +27,14 @@ final class AdCell: UICollectionViewCell {
         setUpBehaviors()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
+        adImageView.cancelImageLoading()
         adImageView.image = nil
         titleLabel.text = nil
         categoryLabel.text = nil
@@ -46,13 +48,9 @@ final class AdCell: UICollectionViewCell {
         priceLabel.text = ad.price
         urgentIndicator.isHidden = !ad.isUrgent
 
-        if let imageURL = ad.imageURL {
-            loadImage(from: imageURL)
-        }
-    }
-
-    private func loadImage(from url: URL) {
-        // Implementation will go here
+        adImageView.loadImage(
+            from: ad.images
+        )
     }
 }
 
@@ -99,7 +97,7 @@ private extension AdCell {
         layer.cornerRadius = 12
         clipsToBounds = true
 
-        adImageView.contentMode = .scaleAspectFill
+        adImageView.contentMode = .scaleAspectFit
         adImageView.clipsToBounds = true
         adImageView.layer.cornerRadius = 24
         adImageView.backgroundColor = .systemGray6
@@ -139,14 +137,15 @@ private struct AdCollectionViewCellPreview: UIViewRepresentable {
             title: "iPhone 12 Pro Max",
             description: "Like new iPhone 12 Pro Max",
             price: "799.00 €",
-            imageURL: URL(string: "https://example.com/image.jpg"),
+            images: .init(
+                small: nil,
+                thumbnail: nil
+            ),
             isUrgent: true
         )
 
         cell.configure(with: mockAd)
 
-        let imageView = cell.viewWithTag(100) as? UIImageView
-        imageView?.image = UIImage(systemName: "phone.fill")
         let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 100))
         containerView.backgroundColor = .black
         containerView.addSubview(cell)

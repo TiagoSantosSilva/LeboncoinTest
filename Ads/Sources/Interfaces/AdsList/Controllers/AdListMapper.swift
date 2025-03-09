@@ -30,7 +30,10 @@ final class AdListMapper: AdListMapperProtocol {
                 title: adDto.title,
                 description: adDto.description,
                 price: "\(adDto.price) \(displayCurrency)",
-                imageURL: URL(string: adDto.imagesUrl?.small ?? ""),
+                images: .init(
+                    small: URL(string: adDto.imagesUrl?.small ?? ""),
+                    thumbnail: URL(string: adDto.imagesUrl?.thumb ?? "")
+                ),
                 isUrgent: adDto.isUrgent
             )
         }

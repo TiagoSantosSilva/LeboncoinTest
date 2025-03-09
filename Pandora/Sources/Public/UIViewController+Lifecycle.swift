@@ -13,6 +13,6 @@ public extension UIViewController {
         case didAppear
         case didDisappear
         case willAppear
-        
+        case willDisappear
     }
 }

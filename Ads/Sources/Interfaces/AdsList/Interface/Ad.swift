@@ -8,11 +8,15 @@
 import Foundation
 
 struct Ad: Hashable {
+    struct Images: Hashable {
+        let small: URL?
+        let thumbnail: URL?
+    }
     let id: Int
     let category: String
     let title: String
     let description: String
     let price: String
-    let imageURL: URL?
+    let images: Images
     let isUrgent: Bool
 }
