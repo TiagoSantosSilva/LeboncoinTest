@@ -80,7 +80,7 @@ private extension AdListViewController {
     }
 
     func setUpContent() {
-        navigationItem.title = "Ads"
+        navigationItem.title = Localized.Ads.List.title
     }
 
     func setUpStyles() {

@@ -12,6 +12,8 @@ import SwiftUI
 struct AdDetailsView: View {
     let viewModel: AdDetailsViewModel
 
+    private typealias L10n = Localized.Ads.Details
+
     var body: some View {
         ScrollView {
             VStack(spacing: .pt16) {
@@ -92,14 +94,14 @@ private extension AdDetailsView {
             Image(systemName: "calendar")
                 .foregroundColor(Color.App.secondaryLabel)
 
-            Text("Posted: \(viewModel.ad.creationDate)")
+            Text(L10n.Posted.value(viewModel.ad.creationDate))
                 .foregroundColor(Color.App.secondaryLabel)
         }
     }
 
     var descriptionView: some View {
         VStack(alignment: .leading, spacing: .pt12) {
-            Text("Description")
+            Text(L10n.Description.title)
                 .font(.headline)
                 .foregroundColor(Color.App.label)
 

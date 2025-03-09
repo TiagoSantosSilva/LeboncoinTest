@@ -32,7 +32,11 @@ let package = Package(
             sources: [
                 "Public",
                 "Interfaces",
-                "Mocks"
+                "Mocks",
+                "Localized"
+            ],
+            resources: [
+                .process("Localizable.xcstrings")
             ]
         ),
         .testTarget(

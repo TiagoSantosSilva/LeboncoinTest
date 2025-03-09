@@ -12,6 +12,8 @@ import UIKit
 final class AdCell: UICollectionViewCell {
     static let identifier = "AdCollectionViewCell"
 
+    private typealias L10n = Localized.Ads.List.Item
+
     private let adImageView = UIImageView()
     private let titleLabel = UILabel()
     private let categoryLabel = UILabel()
@@ -114,7 +116,7 @@ private extension AdCell {
         priceLabel.textColor = .App.label
         priceLabel.textAlignment = .right
 
-        urgentIndicator.text = "Urgent"
+        urgentIndicator.text = L10n.urgent
         urgentIndicator.font = .systemFont(ofSize: 12, weight: .medium)
         urgentIndicator.textColor = .systemOrange
         urgentIndicator.textAlignment = .right
